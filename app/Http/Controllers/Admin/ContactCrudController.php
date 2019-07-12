@@ -21,6 +21,11 @@ class ContactCrudController extends CrudController
         return [0 => 'Vừa đăng ký', 1 => 'Đang xử lý', 2 => 'Hoàn thành'];
     }
 
+    private function contacSource()
+    {
+        return ['TEAM_1' => 'TEAM 1', 'TEAM_2' => 'TEAM 2'];
+    }
+
     public function setup()
     {
         /*
@@ -61,6 +66,12 @@ class ContactCrudController extends CrudController
                 'options' => $this->contactStatus()
             ],
             [
+                'name' => 'source',
+                'label' => 'Team',
+                'type' => 'select_from_array',
+                'options' => $this->contacSource()
+            ],
+            [
                 'name' => 'created_at',
                 'label' => 'Ngày đăng ký',
                 'type' => "date",
@@ -82,6 +93,12 @@ class ContactCrudController extends CrudController
                 'type' => 'textarea'
             ],
             [
+                'name' => 'source',
+                'label' => 'Team',
+                'type' => 'select_from_array',
+                'options' => $this->contacSource()
+            ],
+            [
                 'name' => 'status',
                 'label' => 'Trạng thái',
                 'type' => 'select_from_array',
@@ -101,6 +118,13 @@ class ContactCrudController extends CrudController
         }, function($value) { // if the filter is active
             $this->crud->addClause('where', 'status', $value);
         });
+
+        if (backpack_user()->hasRole('team1')) {
+            $this->crud->addClause('where', 'source', 'TEAM_1');
+        }
+        if (backpack_user()->hasRole('team2')) {
+            $this->crud->addClause('where', 'source', 'TEAM_2');
+        }
 
         // add asterisk for fields that are required in ContactRequest
         $this->crud->setRequiredFields(StoreRequest::class, 'create');

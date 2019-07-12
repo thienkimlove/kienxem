@@ -105,6 +105,7 @@
                             {{ csrf_field() }}
                             <input type="text" name="name" placeholder="Họ và tên">
                             <input type="text" name="phone" placeholder="Nhập số điện thoại">
+                            <input type="hidden" name="source" value="TEAM_1" />
                             <button onclick="document.getElementById('form_submit_4').submit(); return false;" class="btn_submit">Đăng ký</button>
                         </form>
                     </div>
@@ -337,6 +338,7 @@
                         {{ csrf_field() }}
                         <input type="text" name="name" placeholder="Họ và tên">
                         <input type="text" name="phone" placeholder="Nhập số điện thoại">
+                        <input type="hidden" name="source" value="TEAM_1" />
                         <button onclick="document.getElementById('form_submit_5').submit(); return false;" class="btn_submit">Đăng ký</button>
                     </form>
                 </div>
@@ -365,6 +367,7 @@
                     {{ csrf_field() }}
                     <input type="text" name="name" placeholder="Họ và tên">
                     <input type="text" name="phone" placeholder="Nhập số điện thoại">
+                    <input type="hidden" name="source" value="TEAM_1" />
                     <button onclick="document.getElementById('form_submit_1').submit(); return false;" class="btn_submit">Hoàn tất đăng ký</button>
                 </form>
             </div>
@@ -389,6 +392,7 @@
                     {{ csrf_field() }}
                     <input type="text" name="name" placeholder="Họ và tên">
                     <input type="text" name="phone" placeholder="Nhập số điện thoại">
+                    <input type="hidden" name="source" value="TEAM_1" />
                     <textarea type="text" name="note" placeholder="Nhập địa chỉ của bạn" rows="3"></textarea>
                     <button onclick="document.getElementById('form_submit_2').submit(); return false;" class="btn_submit">Hoàn tất đăng ký</button>
                 </form>
@@ -409,6 +413,7 @@
                     {{csrf_field()}}
                     <input type="text" name="name" placeholder="Họ và tên">
                     <input type="text" name="phone" placeholder="Nhập số điện thoại">
+                    <input type="hidden" name="source" value="TEAM_1" />
                     <button onclick="document.getElementById('form_submit_3').submit(); return false;" class="btn_submit">Hoàn tất đăng ký</button>
                 </form>
             </div>

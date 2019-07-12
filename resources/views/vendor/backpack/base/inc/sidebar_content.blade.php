@@ -5,3 +5,15 @@
 --}}
 
 <li><a href="{{ backpack_url('contact') }}"><i class="fa fa-files-o"></i> <span>Danh sách đăng ký</span></a></li>
+
+<!-- Users, Roles Permissions -->
+@can('system')
+    <li class="treeview">
+        <a href="#"><i class="fa fa-group"></i> <span>Thiết lập</span> <i class="fa fa-angle-left pull-right"></i></a>
+        <ul class="treeview-menu">
+            <li><a href="{{ backpack_url('user') }}"><i class="fa fa-user"></i> <span>Users</span></a></li>
+            <li><a href="{{ backpack_url('role') }}"><i class="fa fa-group"></i> <span>Roles</span></a></li>
+            <li><a href="{{ backpack_url('permission') }}"><i class="fa fa-key"></i> <span>Permissions</span></a></li>
+        </ul>
+    </li>
+@endcan
