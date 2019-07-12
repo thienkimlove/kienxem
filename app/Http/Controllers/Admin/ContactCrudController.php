@@ -16,6 +16,11 @@ use Backpack\CRUD\CrudPanel;
  */
 class ContactCrudController extends CrudController
 {
+    private function contactStatus()
+    {
+        return [0 => 'Vừa đăng ký', 1 => 'Đang xử lý', 2 => 'Hoàn thành'];
+    }
+
     public function setup()
     {
         /*
@@ -25,7 +30,7 @@ class ContactCrudController extends CrudController
         */
         $this->crud->setModel('App\Models\Contact');
         $this->crud->setRoute(config('backpack.base.route_prefix') . '/contact');
-        $this->crud->setEntityNameStrings('contact', 'contacts');
+        $this->crud->setEntityNameStrings('Đăng Ký', 'Đăng Ký');
 
         /*
         |--------------------------------------------------------------------------
@@ -34,7 +39,68 @@ class ContactCrudController extends CrudController
         */
 
         // TODO: remove setFromDb() and manually define Fields and Columns
-        $this->crud->setFromDb();
+        // $this->crud->setFromDb();
+        $this->crud->addColumns([
+            [
+                'name' => 'name',
+                'label' => 'Họ và Tên'
+            ],
+            [
+                'name' => 'phone',
+                'label' => 'SĐT'
+            ],
+            [
+                'name' => 'note',
+                'label' => 'Địa chỉ',
+                'type' => 'textarea'
+            ],
+            [
+                'name' => 'status',
+                'label' => 'Trạng thái',
+                'type' => 'select_from_array',
+                'options' => $this->contactStatus()
+            ],
+            [
+                'name' => 'created_at',
+                'label' => 'Ngày đăng ký',
+                'type' => "date",
+            ],
+        ]);
+
+        $this->crud->addFields([
+            [
+                'name' => 'name',
+                'label' => 'Họ và Tên'
+            ],
+            [
+                'name' => 'phone',
+                'label' => 'SĐT'
+            ],
+            [
+                'name' => 'note',
+                'label' => 'Địa chỉ',
+                'type' => 'textarea'
+            ],
+            [
+                'name' => 'status',
+                'label' => 'Trạng thái',
+                'type' => 'select_from_array',
+                'options' => $this->contactStatus()
+            ],
+        ]);
+
+        $this->crud->enableExportButtons();
+        $this->crud->orderBy('created_at', 'desc');
+
+        $this->crud->addFilter([ // select2 filter
+            'name' => 'status',
+            'type' => 'select2',
+            'label'=> 'Trạng thái'
+        ], function() {
+            return $this->contactStatus();
+        }, function($value) { // if the filter is active
+            $this->crud->addClause('where', 'status', $value);
+        });
 
         // add asterisk for fields that are required in ContactRequest
         $this->crud->setRequiredFields(StoreRequest::class, 'create');
