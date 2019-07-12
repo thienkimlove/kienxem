@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="192" height="48" viewBox="0 0 192 48">
+<style type="text/css">
+	.arrow{fill:none;stroke:rgba(33, 33, 33, 0.6);stroke-width:1.5;stroke-linejoin:round;stroke-miterlimit:10;}
+	.top,.down{stroke-width:1;}
+	@keyframes next{0%{}50%{stroke:rgba(250,250,250,0.8);transform:translateX(5px);}100%{}}
+	@keyframes prev{0%{}50%{stroke:rgba(250,250,250,0.8);transform:translateX(-5px);}100%{}}
+	@keyframes down{0%{}50%{stroke:rgba(250,250,250,0.8);transform:translateY(5px);}100%{}}
+	@keyframes top{0%{}50%{stroke:rgba(250,250,250,0.8);transform:translateY(-5px);}100%{}}
+	.next{animation: next 2s infinite;}
+	.prev{animation: prev 2s infinite;}
+	.down{animation: down 2s infinite;}
+	.top{animation: top 2s infinite;}
+</style>
+<polyline class="arrow next" points="19,8 31,24 19,40 "/>
+<polyline class="arrow prev" points="77,8 65,24 77,40 "/>
+<polyline class="arrow down" points="104.4,18 120.4,30 136.4,18 "/>
+<polyline class="arrow down" points="110.9,18 120.4,25.1 129.9,18 "/>
+<polyline class="arrow top" points="158.1,30 167.6,22.9 177.1,30 "/>
+<polyline class="arrow top" points="151.6,30.2 167.6,18.2 183.6,30.2 "/>
+</svg>
