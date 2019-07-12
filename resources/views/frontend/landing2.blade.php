@@ -101,10 +101,11 @@
                         <p><strong>Cam kết chính hãng, phát hiện hàng giả đền 100 lần</strong></p>
                         <p><strong style="text-transform: uppercase;">Gối ngủ cao cấp good sleep</strong></p>
 
-                        <form action="" class="getInfo">
-                            <input type="text" placeholder="Họ và tên">
-                            <input type="text" placeholder="Nhập số điện thoại">
-                            <button class="btn_submit">Đăng ký</button>
+                        <form id="form_submit_4" method="post" action="{{ url('/saveContact') }}" class="getInfo">
+                            {{ csrf_field() }}
+                            <input type="text" name="name" placeholder="Họ và tên">
+                            <input type="text" name="phone" placeholder="Nhập số điện thoại">
+                            <button onclick="document.getElementById('form_submit_4').submit(); return false;" class="btn_submit">Đăng ký</button>
                         </form>
                     </div>
                     <div class="bottomContent">
@@ -332,10 +333,11 @@
                     </div>
                     <div class="txt m30">Chương trình khuyến mãi kết thúc sau:</div>
                     <div class="timer"></div>
-                    <form action="" class="getInfo">
-                        <input type="text" placeholder="Họ và tên">
-                        <input type="text" placeholder="Nhập số điện thoại">
-                        <button class="btn_submit">Đăng ký</button>
+                    <form id="form_submit_5" method="post" action="{{ url('/saveContact') }}" class="getInfo">
+                        {{ csrf_field() }}
+                        <input type="text" name="name" placeholder="Họ và tên">
+                        <input type="text" name="phone" placeholder="Nhập số điện thoại">
+                        <button onclick="document.getElementById('form_submit_5').submit(); return false;" class="btn_submit">Đăng ký</button>
                     </form>
                 </div>
             </div>
@@ -359,10 +361,11 @@
                 <p><yellow>* Bảo hành 36 tháng</yellow></p>
                 <p><red>Chương trình khuyến mãi sẽ kết thúc trong:</red></p>
                 <div class="timer" id="uudaiTimer"></div>
-                <form action="" class="getInfo">
-                    <input type="text" placeholder="Họ và tên">
-                    <input type="text" placeholder="Nhập số điện thoại">
-                    <button class="btn_submit">Hoàn tất đăng ký</button>
+                <form id="form_submit_1" method="post" action="{{ url('/saveContact') }}" class="getInfo">
+                    {{ csrf_field() }}
+                    <input type="text" name="name" placeholder="Họ và tên">
+                    <input type="text" name="phone" placeholder="Nhập số điện thoại">
+                    <button onclick="document.getElementById('form_submit_1').submit(); return false;" class="btn_submit">Hoàn tất đăng ký</button>
                 </form>
             </div>
         </div>
@@ -382,11 +385,12 @@
                 <p><yellow> * 1 đổi 1 trong 30 ngày</yellow></p>
                 <p><yellow>* Vận chuyển tận nơi, miễn phí</yellow></p>
                 <p><yellow>* Bảo hành 36 tháng</yellow></p>
-                <form action="" class="getInfo">
-                    <input type="text" placeholder="Họ và tên">
-                    <input type="text" placeholder="Nhập số điện thoại">
-                    <textarea type="text" placeholder="Nhập địa chỉ của bạn" rows="3"></textarea>
-                    <button class="btn_submit">Hoàn tất đăng ký</button>
+                <form id="form_submit_2" method="post" action="{{ url("/saveContact") }}" class="getInfo">
+                    {{ csrf_field() }}
+                    <input type="text" name="name" placeholder="Họ và tên">
+                    <input type="text" name="phone" placeholder="Nhập số điện thoại">
+                    <textarea type="text" name="note" placeholder="Nhập địa chỉ của bạn" rows="3"></textarea>
+                    <button onclick="document.getElementById('form_submit_2').submit(); return false;" class="btn_submit">Hoàn tất đăng ký</button>
                 </form>
             </div>
         </div>
@@ -401,10 +405,11 @@
             </div>
             <div class="popBody">
                 <p><yellow> Quý khách vui lòng để lại thông tin, bộ phận tư vấn sẽ liên hệ lại sau ít phút.</yellow></p>
-                <form action="" class="getInfo">
-                    <input type="text" placeholder="Họ và tên">
-                    <input type="text" placeholder="Nhập số điện thoại">
-                    <button class="btn_submit">Hoàn tất đăng ký</button>
+                <form id="form_submit_3" method="post" action="{{ url('/saveContact') }}" class="getInfo">
+                    {{csrf_field()}}
+                    <input type="text" name="name" placeholder="Họ và tên">
+                    <input type="text" name="phone" placeholder="Nhập số điện thoại">
+                    <button onclick="document.getElementById('form_submit_3').submit(); return false;" class="btn_submit">Hoàn tất đăng ký</button>
                 </form>
             </div>
         </div>

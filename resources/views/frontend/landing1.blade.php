@@ -102,6 +102,7 @@
                         <p><strong style="text-transform: uppercase;">Gối ngủ cao cấp good sleep</strong></p>
 
                         <form id="form_submit_4" method="post" action="{{ url('/saveContact') }}" class="getInfo">
+                            {{ csrf_field() }}
                             <input type="text" name="name" placeholder="Họ và tên">
                             <input type="text" name="phone" placeholder="Nhập số điện thoại">
                             <button onclick="document.getElementById('form_submit_4').submit(); return false;" class="btn_submit">Đăng ký</button>
@@ -333,6 +334,7 @@
                     <div class="txt m30">Chương trình khuyến mãi kết thúc sau:</div>
                     <div class="timer"></div>
                     <form id="form_submit_5" method="post" action="{{ url('/saveContact') }}" class="getInfo">
+                        {{ csrf_field() }}
                         <input type="text" name="name" placeholder="Họ và tên">
                         <input type="text" name="phone" placeholder="Nhập số điện thoại">
                         <button onclick="document.getElementById('form_submit_5').submit(); return false;" class="btn_submit">Đăng ký</button>
@@ -404,6 +406,7 @@
             <div class="popBody">
                 <p><yellow> Quý khách vui lòng để lại thông tin, bộ phận tư vấn sẽ liên hệ lại sau ít phút.</yellow></p>
                 <form id="form_submit_3" method="post" action="{{ url('/saveContact') }}" class="getInfo">
+                    {{csrf_field()}}
                     <input type="text" name="name" placeholder="Họ và tên">
                     <input type="text" name="phone" placeholder="Nhập số điện thoại">
                     <button onclick="document.getElementById('form_submit_3').submit(); return false;" class="btn_submit">Hoàn tất đăng ký</button>
