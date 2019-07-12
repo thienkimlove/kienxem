@@ -11,6 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'FrontendController@landing1');
+Route::get('/san-pham', 'FrontendController@landing2');
+Route::post('/saveContact', 'FrontendController@saveContact');
