@@ -346,6 +346,32 @@
         </section>
     </div>
     <a href="javascript:void(0)" class="btnGoTop px" onclick="$('html, body').animate({scrollTop: 0 },1000);"><img src="{{url('frontend/images/btn_gotop.png')}}" alt="" class="imgFull"></a>
+    <div class="randomGuess">
+        <div class="guess" id="guess0">
+            <div class="leftSide"><img src="images/banner_16.jpg" alt="" class="imgFull"></div>
+            <div class="rightSide">
+                <strong>Chị Nhung</strong>
+                <span>Đã đặt hàng thành công</span>
+                <span>12 phút trước</span>
+            </div>
+        </div>
+        <div class="guess" id="guess1">
+            <div class="leftSide"><img src="images/banner_16.jpg" alt="" class="imgFull"></div>
+            <div class="rightSide">
+                <strong>Chị Hằng</strong>
+                <span>Đã đặt hàng thành công</span>
+                <span>12 phút trước</span>
+            </div>
+        </div>
+        <div class="guess" id="guess2">
+            <div class="leftSide"><img src="images/banner_16.jpg" alt="" class="imgFull"></div>
+            <div class="rightSide">
+                <strong>Chị Huệ</strong>
+                <span>Đã đặt hàng thành công</span>
+                <span>12 phút trước</span>
+            </div>
+        </div>
+    </div>
 </div>
 <div class="popup px popGetInfo" id="popupUudai">
     <div class="popup_content pa">

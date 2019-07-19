@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function(){
-    echo "Home";
-});
+Route::get('/', 'FrontendController@index');
 Route::get('/san-pham-landing2', 'FrontendController@landing2');
 Route::get('/san-pham-landing1', 'FrontendController@landing1');
 Route::post('/saveContact', 'FrontendController@saveContact');

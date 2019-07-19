@@ -7,6 +7,18 @@ use Illuminate\Http\Request;
 
 class FrontendController extends Controller
 {
+
+    public function index()
+    {
+        $host = request()->getHttpHost();
+
+        if (strpos($host, 'goitrimatngu.com') !== FALSE) {
+            return view('frontend.landing1');
+        } else {
+            return view('frontend.landing2');
+        }
+    }
+
     public function landing1()
     {
         return view('frontend.landing1');
